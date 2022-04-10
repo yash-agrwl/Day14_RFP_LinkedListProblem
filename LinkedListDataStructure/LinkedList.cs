@@ -14,8 +14,8 @@ namespace LinkedListDataStructure
         public void Add(T data)
         {
             Node<T> node = new Node<T>(data);
-            if(Head == null)
-                Head = node;
+            if(this.Head == null)
+                this.Head = node;
             else
             {
                 node.Next = Head;
@@ -39,6 +39,43 @@ namespace LinkedListDataStructure
                 temp.Next = node;
             }
             Console.WriteLine("{0} inserted into linked list", node.Data);
+        }
+
+        public void InsertAtParticularPosition(int position, T data)
+        {
+            if (position < 1)
+            {
+                Console.WriteLine($"{data} cannot be inseted due to Invalid Position");
+                return;
+            }
+            Node<T> node = new Node<T>(data);
+            if (position == 1)
+            {
+                node.Next = this.Head;
+                Head = node;
+                Console.WriteLine($"{data} inserted at position {position} of linked list");
+            }
+            else
+            {
+                Node<T> temp = this.Head;
+                int count = 1;
+                while (temp != null)
+                {
+                    if (count == position - 1)
+                    {
+                        node.Next = temp.Next;
+                        temp.Next = node;
+                        Console.WriteLine($"{data} inserted at position {position} of linked list");
+                        return;
+                    }
+                    else
+                    {
+                        temp = temp.Next;
+                        count++;
+                    }
+                }
+                Console.WriteLine($"{data} cannot be inserted due to Position out of range.");
+            }
         }
 
         public void Display()

@@ -9,7 +9,8 @@ namespace LinkedListDataStructure
             Console.WriteLine("Welcome to the Linked List Data Structure Problem.\n");
 
             Console.WriteLine("Press '1' to Add elements to First of LinkedList.");
-            Console.WriteLine("Press '2' to Append elements to Last of LinkedList");
+            Console.WriteLine("Press '2' to Append elements to Last of LinkedList.");
+            Console.WriteLine("Press '3' to Insert elements at a Particular Position.");
             Console.Write("Enter Choice: ");
             string choice = Console.ReadLine();
             Console.WriteLine();
@@ -28,6 +29,12 @@ namespace LinkedListDataStructure
                     list.Append(56);
                     list.Append(30);
                     list.Append(70);
+                    list.Display();
+                    break;
+                case "3":
+                    list.Append(56);
+                    list.Append(70);
+                    list.InsertAtParticularPosition(2, 30);
                     list.Display();
                     break;
                 default:
