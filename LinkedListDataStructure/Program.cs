@@ -14,6 +14,7 @@ namespace LinkedListDataStructure
             Console.WriteLine("Press '4' to Delete the first element in the LinkedList.");
             Console.WriteLine("Press '5' to Delete the last element in the LinkedList.");
             Console.WriteLine("Press '6' to Search LinkedList for a particular Element.");
+            Console.WriteLine("Press '7' to Insert a node after a particular Node in the LinkedList.");
             Console.Write("Enter Choice: ");
             string choice = Console.ReadLine();
             Console.WriteLine();
@@ -69,6 +70,18 @@ namespace LinkedListDataStructure
                         Console.WriteLine("\nThe Element doesn't exist in the List.");
                     else
                         Console.WriteLine($"\nThe Element with value 30 is in position {position} of the LinkedList.");
+                    break;
+                case "7":
+                    list.Append(56);
+                    list.Append(30);
+                    list.Append(70);
+                    Console.Write("\nBefore Inserting, ");
+                    list.Display();
+                    position = list.Search(30);
+                    Console.WriteLine();
+                    list.InsertAtParticularPosition(position+1, 40);
+                    Console.Write("\nAfter Inserting, ");
+                    list.Display();
                     break;
                 default:
                     Console.WriteLine("Invalid Choice Entered.");
