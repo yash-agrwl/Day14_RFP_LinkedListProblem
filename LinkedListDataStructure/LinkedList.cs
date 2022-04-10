@@ -21,7 +21,24 @@ namespace LinkedListDataStructure
                 node.Next = Head;
                 this.Head = node;
             }
-            Console.WriteLine("{0} inserted into linked list\n", node.Data);
+            Console.WriteLine("{0} inserted into linked list", node.Data);
+        }
+
+        public void Append(T data)
+        {
+            Node<T> node = new Node<T>(data);
+            if (this.Head == null)
+                this.Head = node;
+            else
+            {
+                Node<T> temp = Head;
+                while (temp.Next != null)
+                {
+                    temp = temp.Next;
+                }
+                temp.Next = node;
+            }
+            Console.WriteLine("{0} inserted into linked list", node.Data);
         }
 
         public void Display()
@@ -29,10 +46,10 @@ namespace LinkedListDataStructure
             Node<T> temp = this.Head;
             if (temp == null)
             {
-                Console.WriteLine("LinkedList is empty\n");
+                Console.WriteLine("LinkedList is empty.");
                 return;
             }
-            Console.WriteLine("The Elements in Linked List are displayed below:");
+            Console.WriteLine("\nThe Elements in Linked List are displayed below:");
             while (temp != null)
             {
                 Console.Write(temp.Data + " ");
