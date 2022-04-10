@@ -99,6 +99,20 @@ namespace LinkedListDataStructure
             temp.Next = null;
         }
 
+        public int Search(T value)
+        {
+            Node<T> node = this.Head;
+            int count = 0;
+            while (node != null)
+            {
+                count++;
+                if (node.Data.Equals(value))
+                    return count;
+                node = node.Next;
+            }
+            return count;
+        }
+
         public void Display()
         {
             Node<T> temp = this.Head;
