@@ -78,6 +78,13 @@ namespace LinkedListDataStructure
             }
         }
 
+        public void RemoveFirstNode()
+        {
+            if (this.Head == null)
+                return;
+            this.Head = this.Head.Next;
+        }
+
         public void Display()
         {
             Node<T> temp = this.Head;
@@ -86,7 +93,7 @@ namespace LinkedListDataStructure
                 Console.WriteLine("LinkedList is empty.");
                 return;
             }
-            Console.WriteLine("\nThe Elements in Linked List are displayed below:");
+            Console.WriteLine("\nThe Elements in Linked List are:");
             while (temp != null)
             {
                 Console.Write(temp.Data + " ");

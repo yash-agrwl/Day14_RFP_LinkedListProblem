@@ -11,6 +11,7 @@ namespace LinkedListDataStructure
             Console.WriteLine("Press '1' to Add elements to First of LinkedList.");
             Console.WriteLine("Press '2' to Append elements to Last of LinkedList.");
             Console.WriteLine("Press '3' to Insert elements at a Particular Position.");
+            Console.WriteLine("Press '4' to delete the first element in the LinkedList.");
             Console.Write("Enter Choice: ");
             string choice = Console.ReadLine();
             Console.WriteLine();
@@ -35,6 +36,16 @@ namespace LinkedListDataStructure
                     list.Append(56);
                     list.Append(70);
                     list.InsertAtParticularPosition(2, 30);
+                    list.Display();
+                    break;
+                case "4":
+                    list.Append(56);
+                    list.Append(30);
+                    list.Append(70);
+                    Console.Write("\nBefore removing first node, ");
+                    list.Display();
+                    list.RemoveFirstNode();
+                    Console.Write("\nAfter removing first node, ");
                     list.Display();
                     break;
                 default:
