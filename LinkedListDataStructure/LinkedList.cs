@@ -110,7 +110,47 @@ namespace LinkedListDataStructure
                     return count;
                 node = node.Next;
             }
-            return count;
+            return count=0;
+        }
+
+        public void RemoveAtParticularPosition(int position)
+        {
+            if (position < 1)
+                return;
+            if (position == 1)
+            {
+                RemoveFirstNode();
+                return;
+            }
+            else
+            {
+                Node<T> temp = this.Head;
+                Node<T> pointer = temp.Next;
+                for (int count = 1; count<position-1; count++)
+                {
+                    temp = temp.Next;
+                    pointer = temp.Next; 
+                }
+                temp.Next = pointer.Next;
+                pointer.Next = null;
+            }
+        }
+
+        public int size()
+        {
+            Node<T> temp = this.Head;
+            int count = 0;
+            if(temp == null)
+                return count;
+            else
+            {
+                while (temp != null)
+                {
+                    count++;
+                    temp = temp.Next;
+                }
+                return count;
+            }
         }
 
         public void Display()

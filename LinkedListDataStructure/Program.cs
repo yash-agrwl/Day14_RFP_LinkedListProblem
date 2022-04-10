@@ -15,6 +15,7 @@ namespace LinkedListDataStructure
             Console.WriteLine("Press '5' to Delete the last element in the LinkedList.");
             Console.WriteLine("Press '6' to Search LinkedList for a particular Element.");
             Console.WriteLine("Press '7' to Insert a node after a particular Node in the LinkedList.");
+            Console.WriteLine("Press '8' to Delete a particular element and show the size of the LinkedList.");
             Console.Write("Enter Choice: ");
             string choice = Console.ReadLine();
             Console.WriteLine();
@@ -82,6 +83,23 @@ namespace LinkedListDataStructure
                     list.InsertAtParticularPosition(position+1, 40);
                     Console.Write("\nAfter Inserting, ");
                     list.Display();
+                    break;
+                case "8":
+                    list.Append(56);
+                    list.Append(30);
+                    list.Append(40);
+                    list.Append(70);
+                    Console.Write("\nBefore Deleting, ");
+                    list.Display();
+                    Console.WriteLine("And the size of the Linked List is " + list.size());
+                    position = list.Search(40);
+                    if (position == 0)
+                        Console.WriteLine("\nThe Particular Element doesn't exist in the List.");
+                    else
+                        list.RemoveAtParticularPosition(position);
+                    Console.Write("\nAfter Deleting, ");
+                    list.Display();
+                    Console.WriteLine("And the size of the Linked List is " + list.size());
                     break;
                 default:
                     Console.WriteLine("Invalid Choice Entered.");
