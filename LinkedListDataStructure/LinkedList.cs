@@ -85,6 +85,20 @@ namespace LinkedListDataStructure
             this.Head = this.Head.Next;
         }
 
+        public void RemoveLastNode()
+        {
+            if (this.Head == null)
+                return;
+            Node<T> temp = this.Head;
+            Node<T> pointer = temp.Next;
+            while (pointer.Next != null)
+            {
+                temp = pointer;
+                pointer = pointer.Next;
+            }
+            temp.Next = null;
+        }
+
         public void Display()
         {
             Node<T> temp = this.Head;
