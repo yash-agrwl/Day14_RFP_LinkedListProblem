@@ -16,6 +16,7 @@ namespace LinkedListDataStructure
             Console.WriteLine("Press '6' to Search LinkedList for a particular Element.");
             Console.WriteLine("Press '7' to Insert a node after a particular Node in the LinkedList.");
             Console.WriteLine("Press '8' to Delete a particular element and show the size of the LinkedList.");
+            Console.WriteLine("Press '9' to Create a SortedLinkedList.");
             Console.Write("Enter Choice: ");
             string choice = Console.ReadLine();
             Console.WriteLine();
@@ -100,6 +101,14 @@ namespace LinkedListDataStructure
                     Console.Write("\nAfter Deleting, ");
                     list.Display();
                     Console.WriteLine("And the size of the Linked List is " + list.size());
+                    break;
+                case "9":
+                    SortedLinkedList<int> sortedlist = new SortedLinkedList<int>();
+                    sortedlist.Add(56);
+                    sortedlist.Add(30);
+                    sortedlist.Add(40);
+                    sortedlist.Add(70);
+                    sortedlist.Display();
                     break;
                 default:
                     Console.WriteLine("Invalid Choice Entered.");

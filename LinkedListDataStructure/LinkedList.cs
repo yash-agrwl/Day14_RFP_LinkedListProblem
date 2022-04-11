@@ -9,7 +9,7 @@ namespace LinkedListDataStructure
     public class LinkedList<T> 
     {
 
-        private Node<T> Head;
+        protected Node<T> Head;
 
         public void Add(T data)
         {
@@ -118,10 +118,7 @@ namespace LinkedListDataStructure
             if (position < 1)
                 return;
             if (position == 1)
-            {
                 RemoveFirstNode();
-                return;
-            }
             else
             {
                 Node<T> temp = this.Head;
@@ -158,7 +155,7 @@ namespace LinkedListDataStructure
             Node<T> temp = this.Head;
             if (temp == null)
             {
-                Console.WriteLine("LinkedList is empty.");
+                Console.WriteLine("\nLinkedList is empty.");
                 return;
             }
             Console.WriteLine("\nThe Elements in Linked List are:");
